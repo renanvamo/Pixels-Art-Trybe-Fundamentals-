@@ -87,9 +87,11 @@ selectPixel();
 // Cria o botão limpar e insere na div
 function createButton() {
   const clearButton = document.createElement('input');
-  clearButton.style.margin = '20px 10px';
+  clearButton.style.marginBottom = '10px';
+  clearButton.style.marginRight = '20px'
   clearButton.id = 'clear-board';
   clearButton.value = 'Limpar';
+  clearButton.className = 'format-btn'
   clearButton.innerHTML = 'Limpar';
   clearButton.type = 'button';
   const buttonDiv = document.getElementById('buttons');
@@ -121,6 +123,7 @@ function createButtonResize() {
   generateBoard.id = 'generate-board';
   generateBoard.type = 'button';
   generateBoard.value = 'VQV';
+  generateBoard.className = 'format-btn';
   generateBoard.innerHTML = 'VQV';
   document.getElementById('buttons').appendChild(generateBoard);
 }
@@ -159,6 +162,7 @@ function createButtonRandomColors() {
   const breakLine = document.createElement('br');
   buttonChangeColor.value = 'Cores Aleatórias';
   buttonChangeColor.type = 'button';
+  buttonChangeColor.className = 'format-btn';
   buttonChangeColor.id = 'btn-change-colors';
   buttonChangeColor.style.marginLeft = '10px';
   const buttonArea = document.getElementById('buttons');
