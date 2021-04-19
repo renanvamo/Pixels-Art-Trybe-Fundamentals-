@@ -5,25 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paleta de Cores</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 id="title">Paleta de Cores</h1>
+    <h1 id="title-hero" class="title is-1">Paleta de Cores</h1>
   </header>
-  <section id="color-palette">
-    <div class="color" id="box0"></div>
-    <div class="color" id="box1"></div>
-    <div class="color" id="box2"></div>
-    <div class="color" id="box3"></div>
-  </section>
-  <p>Crie seu próprio tabuleiro!</p>
-  <div id="buttons">
-  </div>
-  <section id="pixel-board">
-  </section>
-  <script src="script.js"></script>
+  <main>
+    <p class="title is-3 lines">Vamos pintar os Pixels?</p>
+    <p class="subtitle is-5">Que tal clicar em uma das cores abaixo e depois clicar em um Pixel branco?</p>
+    <section id="color-palette">
+      <div class="color" id="box0"></div>
+      <div class="color" id="box1"></div>
+      <div class="color" id="box2"></div>
+      <div class="color" id="box3"></div>
+    </section>
+    
+    <div id="buttons">
+      <div class="lines"><button id="btn-change-colors" class="button is-warning">Cores Aleatórias</button>
+    </div>
+      
+    <div class="lines">
+      <label class="label">Monte o seu tabuleiro! <br>
+        <input placeholder="Entre 5 a 20 Pixels" id="board-size" type="text" class="button-inline input btn"><butto id="generate-board" class=" button is-success">VQV</butto>
+      </label>
+    </div>
+
+    <div class="lines">
+      <button id="clear-board" class="button is-danger" >Limpar os Pixels</button>
+    </div>
+
+    <section id="pixel-board">
+    </section>
+    <script src="script.js"></script>
+  </main>
 </body>
 </html>

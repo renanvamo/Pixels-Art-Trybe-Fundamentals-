@@ -1,1 +1,1 @@
-Primeiro site criado utilizando JS!
+Esse é o primeiro site utilizando HTML, CSS e JS durante o curso da Trybe. 
