@@ -10,6 +10,15 @@ function boardRemove() {
   pixelBoard.innerHTML = '';
 }
 
+// Cria uma cor rgb
+function palleteColors() {
+  const randNumb1 = Math.ceil(Math.random() * 255);
+  const randNumb2 = Math.ceil(Math.random() * 255);
+  const randNumb3 = Math.ceil(Math.random() * 255);
+  let rgbColor = `rgb(${randNumb1},${randNumb2},${randNumb3})`;
+  return rgbColor;
+}
+
 // Cria os elementos do quadro de acordo com o número de pixels
 function boardMaker(pixels) {
   boardRemove();
@@ -25,7 +34,7 @@ function boardMaker(pixels) {
   }
 }
 
-// Seleciona a cor preta como primária e também cria um tabuleiro padrão
+// Seleciona a primeira cor como selecionada e também cria um tabuleiro padrão
 function InitBoard() {
   const firstSelectedColor = document.getElementById('box0');
   firstSelectedColor.classList = ('color selected');
@@ -115,28 +124,27 @@ function BoardSize() {
 function randomizer() {
   const buttonChangeColor = document.getElementById('btn-change-colors');
   buttonChangeColor.addEventListener('click', () => {
-    palleteBoxes();
+    boxColoring();
   });
 }
 
-// Determina as cores da paleta, exceto a primeira
-function palleteBoxes() {
+// Aplica a cor rgb a cada box
+function boxColoring() {
   for (let index = 0; index < boxes.length; index += 1) {
-    const randNumb1 = Math.ceil(Math.random() * 255);
-    const randNumb2 = Math.ceil(Math.random() * 255);
-    const randNumb3 = Math.ceil(Math.random() * 255);
-    boxes[index].style.backgroundColor = `rgb(${randNumb1},${randNumb2},${randNumb3})`;
+    let color = palleteColors();
+    boxes[index].style.backgroundColor = color;
   }
 }
 
+// Une todas as funções na ordem correta de funcionamento
 function Onload() {
   InitBoard();
   colorSelection();
   selectPixel();
   BoardSize();
   randomizer();
-  palleteBoxes();
+  palleteColors();
+  boxColoring();
   clearBoard();
 }
-
-onload = Onload
+onload = Onload;
